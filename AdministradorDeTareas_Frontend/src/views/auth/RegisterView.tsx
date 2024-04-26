@@ -47,7 +47,7 @@ export default function RegisterView() {
 
       <form
         onSubmit={handleSubmit(handleRegister)}
-        className="space-y-8 p-10  bg-gray-900 mt-6 rounded-xl"
+        className="space-y-8 p-10 bg-gray-900 shadow-2xl mt-6 rounded-xl"
         noValidate
       >
         <div className="flex flex-col gap-3 text-black">
@@ -137,6 +137,12 @@ export default function RegisterView() {
             className="text-center text-gray-300 font-normal text-[18px] hover:text-amber-600 "
           >
             ¿Ya tienes cuenta? Iniciar sesión.
+          </Link>
+          <Link
+            to={"/auth/forgot-password"}
+            className="text-center mt-4 text-gray-300 font-normal text-[18px] hover:text-amber-600 "
+          >
+            ¿Olvidaste tu contraseña? Reestablecer.
           </Link>
         </nav>
       </form>

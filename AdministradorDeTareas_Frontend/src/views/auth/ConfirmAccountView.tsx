@@ -56,16 +56,15 @@ export default function ConfirmAccountView() {
             <PinInputField className="w-10 h-10 p-3 rounded-lg border-gray-400 border placeholder-white" />
           </PinInput>
         </div>
+        <nav className="mt-8 flex flex-col space-y-4">
+          <Link
+            to="/auth/request-code"
+            className="text-center text-white hover:text-amber-600 font-normal"
+          >
+            Solicitar un nuevo Código
+          </Link>
+        </nav>
       </form>
-
-      <nav className="mt-8 flex flex-col space-y-4">
-        <Link
-          to="/auth/request-code"
-          className="text-center text-white hover:text-amber-600 font-normal"
-        >
-          Solicitar un nuevo Código
-        </Link>
-      </nav>
     </>
   );
 }
