@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { UserLoginForm } from "@/types/index";
 import ErrorMessage from "@/components/ErrorMessage";
@@ -18,13 +18,16 @@ export default function LoginView() {
     formState: { errors },
   } = useForm({ defaultValues: initialValues });
 
+  const navigate = useNavigate();
+
   const { mutate } = useMutation({
     mutationFn: authenticateUser,
     onError: (error) => {
       toast.error(error.message);
     },
-    onSuccess: (data) => {
-      toast.success(data);
+    onSuccess: () => {
+      toast.success("Iniciando Sesión...");
+      navigate("/");
     },
   });
 
@@ -45,8 +48,8 @@ export default function LoginView() {
         className="space-y-8 p-10 bg-gray-900 shadow-2xl mt-6 rounded-xl"
         noValidate
       >
-        <div className="flex flex-col gap-3 text-white">
-          <label className="font-normal text-xl">Email</label>
+        <div className="flex flex-col gap-3 text-black">
+          <label className="font-normal text-white text-xl">Email</label>
 
           <input
             id="email"
