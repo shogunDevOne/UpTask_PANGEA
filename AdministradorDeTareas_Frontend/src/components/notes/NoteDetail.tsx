@@ -2,11 +2,7 @@ import { deleteNote } from "@/api/NoteAPI";
 import { useAuth } from "@/hooks/useAuth";
 import { Note } from "@/types/index";
 import { formatDate } from "@/utils/utils";
-import {
-  QueriesObserver,
-  useMutation,
-  useQueryClient,
-} from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useMemo } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import { toast } from "react-toastify";

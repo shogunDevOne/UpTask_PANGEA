@@ -5,7 +5,6 @@ import ErrorMessage from "@/components/ErrorMessage";
 import { useMutation } from "@tanstack/react-query";
 import { updatePasswordWithToken } from "@/api/AuthAPI";
 import { toast } from "react-toastify";
-import { watch } from "fs";
 
 type NewPasswordFormProps = {
   token: ConfirmToken["token"];
